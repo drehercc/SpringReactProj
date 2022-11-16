@@ -30,12 +30,15 @@ public class SmsService {
 	
 	public void sendSms(Long saleId) {
 		
+		System.err.println("HelloSms");
+		System.out.println("HelloSms");
+		
 		Sale sale = saleRepository.findById(saleId).get();
 		
 		String date = sale.getDate().getMonthValue() + "/" + sale.getDate().getYear();
 		
 		String msg = "The seller " + sale.getSellerName() + " was featured in " + date
-				+ " with a total of R$ " + String.format("%.2f", sale.getAmount());
+				+ " with a total of R$ " + String.format("%.0f", sale.getAmount());
 		
 		Twilio.init(twilioSid, twilioKey);
 
