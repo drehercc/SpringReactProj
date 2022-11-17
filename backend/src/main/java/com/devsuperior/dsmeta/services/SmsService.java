@@ -29,9 +29,7 @@ public class SmsService {
 	private SaleRepository saleRepository;
 	
 	public void sendSms(Long saleId) {
-		
-		System.err.println("HelloSms");
-		System.out.println("HelloSms");
+
 		
 		Sale sale = saleRepository.findById(saleId).get();
 		
